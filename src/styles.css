@@ -10,6 +10,7 @@
   padding: 0;
   margin: 0;
 }
+
 body {
   margin: 4rem;
   background-color: hsl(0, 0%, 15%);
@@ -81,9 +82,33 @@ a {
   color: var(--text-color);
   border-radius: 4rem;
   box-shadow: 0rem 0rem 0rem 0.1rem hsl(0, 0%, 80%);
+  margin-top: 1rem;
 }
 
-a:hover {
-  color: var(--text-color);
-  box-shadow: 0rem 0rem 0rem 0.1rem hsl(0, 0%, 80%);
+@media (max-width: 550px) {
+  body {
+    margin: 0.2rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header h1::after {
+    border-radius: 1.2rem;
+  }
+  .news-container {
+    padding: 1rem;
+    font-size: 0.6rem;
+    border-radius: 1.2rem;
+  }
+  .title {
+    font-size: 1rem;
+    text-align: left;
+  }
+  .description {
+    text-align: justify;
+  }
+  a {
+    padding: 0.5rem;
+    border-radius: 1.2rem;
+  }
 }
