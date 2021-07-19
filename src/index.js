@@ -16,20 +16,12 @@ displayNews = (articles) => {
     try {
       let news = "";
       articles.forEach((article) => {
-        news += `<div class="news container">
-        <div class="source">${article.source.name}</div>
-        <div class="author">${article.author}</div>
+        news += `<div class="news-container">
+        <div class="source">Source: ${article.source.name}</div>
+        <div class="date">${article.publishedAt.slice(0, 10)}</div>
         <div class="title">${article.title}</div>
-        <div class="description">${article.description}</div>
-        <figure class="thumbnail">
-          <img src="${article.urlToImage}" 
-          onerror="
-            this.onerror=null;
-            this.src='https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101028/112815904-no-image-available-icon-flat-vector-illustration.jpg';" 
-          />
-        </figure>
-        <div class="date">${article.publishedAt}</div>
-        <div class="content">${article.content}</div>
+        <div class="description">${article.description}</div>       
+        <a href="${article.url}" target="_blank">Read more</a>
       </div>`;
       });
       document.getElementsByClassName("news")[0].innerHTML = news;
@@ -41,7 +33,7 @@ displayNews = (articles) => {
   });
 };
 
-fetchData = () => {
+(fetchData = () => {
   console.log("fetchData() called");
 
   fetch(request)
@@ -53,4 +45,4 @@ fetchData = () => {
     })
     .then((message) => console.log(message))
     .catch((err) => console.log(err));
-};
+})();
